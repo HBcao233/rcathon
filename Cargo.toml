@@ -1,0 +1,8 @@
+[package]
+name = "cathon"
+version = "0.0.1"
+edition = "2024"
+
+[dependencies]
+atty = "0.2.14"
+clap = { version = "4.4", features = ["derive"] }
