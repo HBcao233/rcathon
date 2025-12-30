@@ -1,9 +1,5 @@
-mod ast;
-mod repl;
-
 use std::io::{self, Read};
 use clap::{CommandFactory, FromArgMatches, Arg, ArgAction};
-
 
 #[derive(clap::Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -17,8 +13,7 @@ struct Cli {
   file: Option<String>,
 }
 
-
-fn main() {
+fn cli() {
   let cli = Cli::command()
     .version(env!("CARGO_PKG_VERSION"))
     .disable_help_flag(true)
@@ -69,40 +64,7 @@ fn main() {
     }
     &None => {}
   }
-  
-  let line = "-1";
-  let mut lexer = ast::Lexer::new(line);
-  // let tokens = lexer.tokenize_all();
-  let mut parser = ast::Parser::new(&mut lexer);
-  let node = parser.parse();
-  println!("{:?}", node);
-  for i in parser.arena.nodes {
-    println!("{:?}", i);
-  }
-  
-  // repl::repl();
-  
-  /*
-  let mut parser = match Parser::new(lexer) {
-    Ok(p) => p,
-    Err(e) => {
-      println!("Parse error: {}", e);
-    }
-  };
-  
-  match parser.parse() {
-    Ok(ast) => match eval(&ast) {
-      Ok(v) => println!("{}", v),
-      Err(EvalError::DivisionByZero) => println!("Evaluation error: division by zero"),
-      Err(EvalError::Other(s)) => println!("Evaluation error: {}", s),
-    },
-    Err(e) => println!("Parse error: {}", e),
-  }
-  */
-  
-  std::process::exit(0);
 }
-
 
 fn run_file(path: &str) {
   // TODO: 实现文件执行逻辑

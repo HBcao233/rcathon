@@ -1,4 +1,4 @@
-use cathon::Span;
+use crate::Span;
 
 #[derive(Debug, Clone, PartialEq)]
 #[allow(dead_code)]
@@ -9,8 +9,8 @@ pub enum TokenKind {
   Float(f64),
   String(String),
   Newline,
-  Indent,
-  Dedent,
+  Indent(usize),
+  Dedent(usize),
   LPar,
   RPar,
   LSqb,

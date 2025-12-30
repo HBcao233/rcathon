@@ -1,5 +1,5 @@
-use cathon::Span;
-use cathon::{Error, SyntaxError};
+use crate::Span;
+use crate::{Error, SyntaxError};
 use super::super::TokenKind;
 use super::super::Token;
 use super::super::TokenStream;
@@ -146,7 +146,6 @@ impl<'a> Parser<'a> {
   where 
     F: Fn(&mut Self) -> Result<NodeId, Error> 
   {
-    let pos_start = self.pos;
     let mut left = func(self)?;
     
     while let Some(res) = self.peek() {

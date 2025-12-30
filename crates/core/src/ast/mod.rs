@@ -6,4 +6,6 @@ pub use token::Token;
 pub use lexer::TokenStream;
 pub use lexer::Lexer;
 pub use parser::Parser;
-// pub mod interpreter;
+pub use parser::NodeId;
+pub use parser::NodeKind;
+pub use parser::Arena;

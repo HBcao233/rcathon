@@ -1,4 +1,4 @@
-use cathon::Error;
+use crate::Error;
 use super::super::TokenKind;
 use super::super::Token;
 use super::Lexer;

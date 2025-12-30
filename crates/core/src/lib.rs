@@ -1,5 +1,6 @@
 mod span;
 mod errors;
+pub mod ast;
 pub use span::Span;
 pub use errors::Error;
 pub use errors::SyntaxError;

@@ -1,4 +1,4 @@
-use cathon::Span;
+use crate::Span;
 use super::super::Token;
 use std::collections::HashMap;
 

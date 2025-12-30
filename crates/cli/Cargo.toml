@@ -1,0 +1,11 @@
+[package]
+name = "cathon_cli"
+version = "0.0.1"
+edition = "2024"
+
+[dependencies]
+cathon_core = { path = "../core", package = "cathon_core" }
+cathon_compiler = { path = "../compiler", package = "cathon_compiler" }
+cathon_runtime = { path = "../runtime", package = "cathon_runtime" }
+atty = "0.2.14"
+clap = { version = "4.4", features = ["derive"] }
